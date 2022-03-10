@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2540799826761398998}
   - component: {fileID: 8640722545731969364}
   m_Layer: 0
-  m_Name: Step-Hange
+  m_Name: Step-Hange_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
