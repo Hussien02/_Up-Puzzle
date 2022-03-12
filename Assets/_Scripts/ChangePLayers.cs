@@ -7,7 +7,9 @@ public class ChangePLayers : MonoBehaviour
     public PlayersManager SOPlayersManager;
     public ButtonsClicked ButtonsClickedSO;
 
-
+    public Animator GreenAnim;
+    public Animator RedAnim;
+    public Animator StairsAnim;
     private void Start()
     {
         ButtonsClickedSO.redButtonClicked = false;
@@ -25,6 +27,13 @@ public class ChangePLayers : MonoBehaviour
                 SOPlayersManager.selecetedPLayer = 1;
         }
 
-
+    }
+    public void SetWining()
+    {
+        GreenAnim.SetTrigger("Win");
+        GreenAnim.SetBool("Win",true);
+        GreenAnim.SetBool("DropGreen", false);
+        RedAnim.SetBool("Win", true);
+        StairsAnim.SetBool("Win", true);
     }
 }

@@ -69,14 +69,12 @@ public class PlayerMovement2 : MonoBehaviour
             {
                 isJumping = true;
                 movementVector.y = initialJumpVelocity;
-                Debug.Log("player " + gameObject.name + "  jump = " + movementVector.y);
             }
             else if (IsplayerForcedJump /*|| Input.GetKeyDown(KeyCode.L)*/)
             {
                 IsplayerForcedJump = false;
                 isJumping = true;
                 movementVector.y = 1.3f * initialJumpVelocity;
-                Debug.Log("player " + gameObject.name + "  jump = " + movementVector.y);
             }
         }
         if (CharacterController.isGrounded && isJumping && movementVector.y <= 0)
@@ -96,5 +94,7 @@ public class PlayerMovement2 : MonoBehaviour
     {
         IsplayerForcedJump = true;
     }
+
+    public void EndGame() { }
     #endregion
 }

@@ -11,4 +11,10 @@ public class PushPlayer : MonoBehaviour
         if(buttonsClickedSO.redButtonClicked)
         other.GetComponent<PlayerMovement2>().ForcePlayerToJump();
     }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("Player name is " + other.gameObject.name);
+        if (buttonsClickedSO.redButtonClicked)
+            other.GetComponent<PlayerMovement2>().ForcePlayerToJump();
+    }
 }
