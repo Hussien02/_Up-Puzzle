@@ -68,7 +68,7 @@ public class PlayerMovement2 : MonoBehaviour
                 movementVector.y = initialJumpVelocity;
                 Debug.Log("player " + gameObject.name + "  jump = " + movementVector.y);
             }
-            else if (IsplayerForcedJump || Input.GetKeyDown(KeyCode.E))
+            else if (IsplayerForcedJump /*|| Input.GetKeyDown(KeyCode.L)*/)
             {
                 IsplayerForcedJump = false;
                 isJumping = true;
