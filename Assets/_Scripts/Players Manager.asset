@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Players Manager
   m_EditorClassIdentifier: 
   selecetedPLayer: 1
+  playersnumber: 0

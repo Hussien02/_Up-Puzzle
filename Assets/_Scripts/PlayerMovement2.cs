@@ -96,6 +96,5 @@ public class PlayerMovement2 : MonoBehaviour
     {
         IsplayerForcedJump = true;
     }
-
     #endregion
 }
