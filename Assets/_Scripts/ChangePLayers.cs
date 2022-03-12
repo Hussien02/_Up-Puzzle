@@ -5,6 +5,15 @@ using UnityEngine;
 public class ChangePLayers : MonoBehaviour
 {
     public PlayersManager SOPlayersManager;
+    public ButtonsClicked ButtonsClickedSO;
+
+
+    private void Start()
+    {
+        ButtonsClickedSO.redButtonClicked = false;
+        ButtonsClickedSO.greenButtonClicked = false;
+        ButtonsClickedSO.YellowButtonClicked= false;
+    }
     private void Update()
     {
 

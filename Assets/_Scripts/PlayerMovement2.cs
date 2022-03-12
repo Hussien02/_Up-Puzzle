@@ -17,7 +17,7 @@ public class PlayerMovement2 : MonoBehaviour
     public float gravityMultiplayer;
 
     [Header("player to be seleted ")]
-    [Range(0, 3)]
+    [Range(0, 1)]
     public int playerID;
     public PlayersManager SOPlayersManager;
 
@@ -25,6 +25,8 @@ public class PlayerMovement2 : MonoBehaviour
     CharacterController CharacterController;
     Vector3 _InputVector;
     Vector3 movementVector = Vector3.zero;
+
+    [HideInInspector] public bool IsplayerForcedJump = false;
 
 
     void Start()
@@ -39,7 +41,6 @@ public class PlayerMovement2 : MonoBehaviour
         initialJumpVelocity = (2 * maxJumpHight) / timeToApix;
         gravictValue = (-2 * maxJumpHight) / Mathf.Pow(timeToApix, 2);
     }
-
 
     void Update()
     {
@@ -58,11 +59,13 @@ public class PlayerMovement2 : MonoBehaviour
         CharacterController.Move(movementVector * Time.deltaTime);
     }
 
+
+    #region Jump
     void HandleJump()
     {
         if (CharacterController.isGrounded && !isJumping)
         {
-            if (Input.GetKeyDown(KeyCode.Space)&& SOPlayersManager.selecetedPLayer == playerID)
+            if (Input.GetKeyDown(KeyCode.Space) && SOPlayersManager.selecetedPLayer == playerID)
             {
                 isJumping = true;
                 movementVector.y = initialJumpVelocity;
@@ -72,7 +75,7 @@ public class PlayerMovement2 : MonoBehaviour
             {
                 IsplayerForcedJump = false;
                 isJumping = true;
-                movementVector.y = 1.3f*initialJumpVelocity;
+                movementVector.y = 1.3f * initialJumpVelocity;
                 Debug.Log("player " + gameObject.name + "  jump = " + movementVector.y);
             }
         }
@@ -89,9 +92,10 @@ public class PlayerMovement2 : MonoBehaviour
             movementVector.y += gravictValue * Time.deltaTime;
         }
     }
-    [HideInInspector] public bool IsplayerForcedJump;
     public void ForcePlayerToJump()
     {
         IsplayerForcedJump = true;
     }
+
+    #endregion
 }

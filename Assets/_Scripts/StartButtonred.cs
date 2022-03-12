@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartButtonred : MonoBehaviour
 {
+
     public ButtonsClicked buttonsClickedSO;
     private void OnTriggerEnter(Collider other)
     {
