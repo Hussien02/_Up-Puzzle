@@ -10,6 +10,8 @@ public class playerReachesHisGola : MonoBehaviour
         if (other.GetComponent<PlayerMovement2>())
         { 
             changePLayers.SetWining();
+            other.GetComponent<Animator>().enabled = true;
+            other.GetComponent<Animator>().SetBool("1", true);
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
@@ -17,6 +19,7 @@ public class playerReachesHisGola : MonoBehaviour
     {
         if (other.GetComponent<PlayerMovement2>())
         {
+            other.GetComponent<Animator>().SetBool("1", true);
             changePLayers.SetWining();
             gameObject.GetComponent<BoxCollider>().enabled = false;
         }
